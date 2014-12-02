@@ -11,3 +11,9 @@
 .container.main-container {
   margin-top: 70px;
 }
+.table .check {
+  width: 75px;
+}
+.table .complete {
+  background: lightgreen;
+}

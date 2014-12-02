@@ -28,9 +28,10 @@
 <div class="container-fluid">
     <h2>Task Board</h2>
     <table class="table">
-        <tr ng-show="taskList.length > 0"><th>Task Title</th><th>Due Date</th></tr>
-        <tr ng-show="taskList.length < 1"><td colspan="2">Looks like you need some work to do!  Add some tasks!</td> </tr>
-        <tr ng-repeat="task in taskList">
+        <tr ng-show="taskList.length > 0"><th class="check">Done</th><th>Task Title</th><th>Due Date</th></tr>
+        <tr ng-show="taskList.length < 1"><td>Looks like you need some work to do!  Add some tasks!</td> </tr>
+        <tr ng-repeat="task in taskList" ng-class="{complete: task.done == true}">
+            <td><input type="checkbox" ng-click="task.done = !task.done"></td>
             <td>{{task.title}}</td>
             <td>{{task.dueDate | date}}</td>
         </tr>
